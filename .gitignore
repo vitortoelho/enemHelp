@@ -1,0 +1,56 @@
+# Ambiente virtual
+venv/
+__pycache__/
+
+# Arquivos de configuração do ambiente
+*.env
+.env
+
+# Arquivos e pastas criados pelo sistema operacional
+*.DS_Store
+Thumbs.db
+
+# Arquivos de banco de dados locais
+*.sqlite3
+
+# Configurações de compilação, cache e IDEs
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.out
+*.class
+
+# Configurações específicas do Django
+db.sqlite3
+*.py[cod]
+*.log
+*.pot
+*.mo
+*.pyc
+__pycache__/
+local_settings.py
+media/
+
+# Arquivos e pastas específicos do editor (exemplo: VSCode)
+.vscode/
+.idea/
+
+# Arquivos de pacotes e dependências do Python
+*.egg-info/
+.Python
+build/
+dist/
+*.egg
+pip-log.txt
+
+# Arquivos de dependências e migrações que não precisam ser versionados
+*.migrations/
+*.spec
+
+# Outras pastas
+node_modules/  # Para dependências do front-end, caso haja integração com React
+staticfiles/   # Arquivos gerados de static (geralmente via collectstatic)
