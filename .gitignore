@@ -10,9 +10,6 @@ __pycache__/
 *.DS_Store
 Thumbs.db
 
-# Arquivos de banco de dados locais
-*.sqlite3
-
 # Configurações de compilação, cache e IDEs
 *.log
 *.pot
@@ -25,7 +22,6 @@ Thumbs.db
 *.class
 
 # Configurações específicas do Django
-db.sqlite3
 *.py[cod]
 *.log
 *.pot
@@ -33,7 +29,6 @@ db.sqlite3
 *.pyc
 __pycache__/
 local_settings.py
-media/
 
 # Arquivos e pastas específicos do editor (exemplo: VSCode)
 .vscode/
@@ -53,4 +48,3 @@ pip-log.txt
 
 # Outras pastas
 node_modules/  # Para dependências do front-end, caso haja integração com React
-staticfiles/   # Arquivos gerados de static (geralmente via collectstatic)

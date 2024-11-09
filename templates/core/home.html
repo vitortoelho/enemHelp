@@ -1,0 +1,25 @@
+<!-- templates/core/home.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Bem-vindo à Página Inicial</h1>
+
+    <!-- Verifica se o usuário está autenticado -->
+    {% if user.is_authenticated %}
+        <p>Olá, {{ user.username }}!</p>
+        <!-- Formulário de logout -->
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+        <p><a href="{% url 'login' %}">Login</a></p>
+        <p><a href="{% url 'register' %}">Cadastrar-se</a></p>
+    {% endif %}
+</body>
+</html>
