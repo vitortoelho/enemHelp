@@ -26,9 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'core',
     'enemHelp',
     'users',
+    'core',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
