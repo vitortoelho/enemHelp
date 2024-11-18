@@ -4,35 +4,45 @@ import json
 import google.generativeai as genai
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
+
+# Caminho construído a partir do diretório atual
+current_directory = os.getcwd()
+promptJson = os.path.join(current_directory, "quiz", "exemploPrompt.json")
+
+with open(promptJson, "r", encoding="utf-8") as arquivo:
+    dadosJson = json.load(arquivo)
+
+jsonDocs = json.dumps(dadosJson, indent=4)
 
 def gerar_questao(area, materia, assunto):
     """Gera uma questão utilizando a API do Gemini.
 
     Args:
         area (str): Área do conhecimento.
-        materia: (str): Matéria específica.
-        assunto: (str): Assunto da questão.
+        materia (str): Matéria específica.
+        assunto (str): Assunto da questão.
 
     Returns:
         dict: Dicionário contendo a resposta da API ou informações sobre o erro.
     """
-
-    # **Adapte o payload de acordo com a documentação da API**
     try:
+        # Configure the API key
         genai.configure(api_key="AIzaSyAA4jvpnCviU9iX8fLlu9YIK4XKN8PS08M")
-        prompt = f"Gere uma questão sobre {assunto} em {materia}, na área de {area}. Gere como um Exercício de escola, dê 4 alternativas a, b, c e d (somente uma correta)."
+
+        # Use triple quotes for a multiline string
+        prompt = f"""Gere uma questão sobre {assunto} em {materia}, na área de {area}. 
+        Gere como um Exercício de escola, dê 4 alternativas a, b, c e d (somente uma correta). 
+        Isso é um prompt para uma aplicação, me dê como resposta APENAS um json, como no seguinte exemplo: {jsonDocs}"""
+
+        # Create the model and generate content
         model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content(prompt)
         print(response.text)
 
-    except:
-        print("Algum erro ocorreu!")
+    except Exception as e:
+        print(f"Algum erro ocorreu: {e}")
 
-    
-# exemplo de codigo da doc que funciona    
-# model = genai.GenerativeModel("gemini-1.5-flash")
-# response = model.generate_content("Write a story about a magic backpack.")
-# print(response.text)
-
-gerar_questao("Subtração","Matematica", "Algebra")
+# Teste a função
+gerar_questao("Subtração", "Matematica", "Algebra")
