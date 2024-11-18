@@ -21,7 +21,7 @@ def gerar_questao(area, materia, assunto):
     # **Adapte o payload de acordo com a documentação da API**
     try:
         genai.configure(api_key="AIzaSyAA4jvpnCviU9iX8fLlu9YIK4XKN8PS08M")
-        prompt = f"Gere uma questão sobre {assunto} em {materia}, na área de {area}."
+        prompt = f"Gere uma questão sobre {assunto} em {materia}, na área de {area}. Gere como um Exercício de escola, dê 4 alternativas a, b, c e d (somente uma correta)."
         model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content(prompt)
         print(response.text)
