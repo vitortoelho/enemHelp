@@ -1,27 +1,17 @@
 {
-    "assunto": "matematica",
+    "assunto": "Exemplo de assunto",
     "questoes": [
-        {
-            "questao": "questao1",
-            "enunciado": "Qual é o resultado de Lorem Ipsum?",
-            "alternativas": {
-                "a": "Lorem 1",
-                "b": "Lorem 2",
-                "c": "Lorem 3",
-                "d": "Lorem 4"
-            },
-            "alternativaCorreta": "b"
+      {
+        "questao": "questao1",
+        "enunciado": "Texto do enunciado",
+        "alternativas": {
+          "a": "Texto da alternativa a",
+          "b": "Texto da alternativa b",
+          "c": "Texto da alternativa c",
+          "d": "Texto da alternativa d"
         },
-        {
-            "questao": "questao2",
-            "enunciado": "Resolva a expressão: Lorem Ipsum Dolor?",
-            "alternativas": {
-                "a": "Ipsum 5",
-                "b": "Ipsum 6",
-                "c": "Ipsum 7",
-                "d": "Ipsum 8"
-            },
-            "alternativaCorreta": "d"
-        }
+        "alternativaCorreta": "Letra da alternativa correta (a, b, c ou d)"
+      }
     ]
-}
+  }
+  
