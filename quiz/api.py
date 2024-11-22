@@ -16,13 +16,12 @@ promptJson = os.path.join(current_directory, "quiz", "exemploPrompt.json")
 # Carregar o exemplo de JSON para ser usado no prompt
 with open(promptJson, "r", encoding="utf-8") as arquivo:
     dadosJson = json.load(arquivo)
-
-jsonDocs = json.dumps(dadosJson, indent=4)  # Serializar o JSON para usá-lo no prompt
+jsonDocs = json.dumps(dadosJson, indent=4)
 
 class GerarQuestaoAPIView(APIView):
     """
     API para gerar questões utilizando o modelo Gemini.
-    Recebe parâmetros via POST (matéria e assunto) e retorna um JSON com as questões.
+    Recebe parâmetros via POST (matéria e assunto) e retorna o texto das questões.
     """
     def post(self, request):
         try:
@@ -38,33 +37,28 @@ class GerarQuestaoAPIView(APIView):
                 )
 
             # Configurar a API do Gemini
-            genai.configure(api_key=os.getenv("AIzaSyDKilv1qBzn8ewXSziCaoWzUOM_aQWVVhU"))  # Certifique-se de configurar sua chave corretamente
+            genai.configure(api_key="AIzaSyDKilv1qBzn8ewXSziCaoWzUOM_aQWVVhU")
 
             # Construir o prompt
             prompt = f"""Gere cinco questões sobre {assunto} em {materia}.
-            Gere como exercícios de escola, dê 4 alternativas para cada questão (a, b, c e d) e indique apenas uma correta.
-            Sua resposta deve ser APENAS um JSON Puro sem texto adicional, seguindo este formato:
-            {jsonDocs}
-
-            Certifique-se de que a resposta esteja no mesmo formato e seja válida."""
+            Gere como exercícios de escola, dê 4 alternativas para cada questão (a, b, c e d) e indique apenas uma correta."""
+            
 
             # Gerar conteúdo usando a API
-            response = genai.generate_content(prompt)
+            model = genai.GenerativeModel("gemini-1.5-flash")
+            response = model.generate_content(prompt)
 
-            # Limpar delimitadores de código, se presentes
-            raw_response = response.result.strip("```json").strip("```").strip()
+            # Obter o texto da resposta
+            texto_questoes = response.text.replace('\n', ' ').strip()
 
-            # Tentar carregar a resposta como JSON
-            questoes_json = json.loads(raw_response)
+            texto_questoes = ' '.join(texto_questoes.split())
 
-            # Retornar o JSON formatado para o cliente
-            return Response(questoes_json, status=status.HTTP_200_OK)
+            texto_questoes = texto_questoes.replace('**', '')
 
-        except json.JSONDecodeError as e:
-            # Erro ao decodificar o JSON retornado pela Gemini
+            # Retornar o texto formatado para o cliente
             return Response(
-                {"error": f"Erro ao processar a resposta da Gemini: {str(e)}"},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                {"questoes": texto_questoes},
+                status=status.HTTP_200_OK
             )
 
         except Exception as e:
