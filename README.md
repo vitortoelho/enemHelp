@@ -16,7 +16,10 @@ comando para instalar os requisitos.
 ```python
 pip install -r requirements.txt
 ```
-
+rode o programa com
+```
+py ./manage.py runserver
+```
 
 caso encontre um erro relacionado a permissão de Scripts durante a inicialização do ambiente virtual, tente essa solução:
 
