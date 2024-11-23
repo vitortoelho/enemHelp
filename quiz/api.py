@@ -9,14 +9,6 @@ from dotenv import load_dotenv
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
-# Caminho do arquivo JSON de exemplo
-current_directory = os.getcwd()
-promptJson = os.path.join(current_directory, "quiz", "exemploPrompt.json")
-
-# Carregar o exemplo de JSON para ser usado no prompt
-with open(promptJson, "r", encoding="utf-8") as arquivo:
-    dadosJson = json.load(arquivo)
-jsonDocs = json.dumps(dadosJson, indent=4)
 
 class GerarQuestaoAPIView(APIView):
     """
@@ -39,21 +31,34 @@ class GerarQuestaoAPIView(APIView):
             # Configurar a API do Gemini
             genai.configure(api_key="AIzaSyDKilv1qBzn8ewXSziCaoWzUOM_aQWVVhU")
 
+            
+            current_directory = os.getcwd()
+            promptJson = os.path.join(current_directory, "quiz", "exemploPrompt.json")
+
+            with open(promptJson, "r", encoding="utf-8") as arquivo:
+                dadosJson = json.load(arquivo)
+            jsonDocs = json.dumps(dadosJson, indent=4)
+
             # Construir o prompt
             prompt = f"""Gere cinco questões sobre {assunto} em {materia}.
-            Gere como exercícios de escola, dê 4 alternativas para cada questão (a, b, c e d) e indique apenas uma correta."""
+            Gere como exercícios de escola, dê 4 alternativas para cada questão (a, b, c e d) e indique apenas uma correta.
+            Formate a sua resposta desse jeito: {jsonDocs}"""
             
 
             # Gerar conteúdo usando a API
             model = genai.GenerativeModel("gemini-1.5-flash")
             response = model.generate_content(prompt)
 
+            texto_questoes = response.text.replace('**', '')
+
+            #print(texto_questoes)
+
             # Obter o texto da resposta
             texto_questoes = response.text.replace('\n', ' ').strip()
 
             texto_questoes = ' '.join(texto_questoes.split())
 
-            texto_questoes = texto_questoes.replace('**', '')
+            #print(texto_questoes)
 
             # Retornar o texto formatado para o cliente
             return Response(

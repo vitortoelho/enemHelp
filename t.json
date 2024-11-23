@@ -1,0 +1,59 @@
+{
+    "questoes": [
+      {
+        "questao": "questao1",
+        "enunciado": "Qual evento é amplamente considerado o início da Segunda Guerra Mundial?",
+        "alternativas": {
+          "a": "O ataque a Pearl Harbor pelo Japão.",
+          "b": "A invasão da Polônia pela Alemanha.",
+          "c": "A assinatura do Pacto de Não-Agressão entre a Alemanha e a União Soviética.",
+          "d": "O lançamento das bombas atômicas em Hiroshima e Nagasaki."
+        },
+        "alternativaCorreta": "b"
+      },
+      {
+        "questao": "questao2",
+        "enunciado": "Qual era o nome do plano de invasão alemã à França, executado em 1940?",
+        "alternativas": {
+          "a": "Plano Barbarossa",
+          "b": "Operação Sea Lion",
+          "c": "Plano Fall Gelb",
+          "d": "Operação Overlord"
+        },
+        "alternativaCorreta": "c"
+      },
+      {
+        "questao": "questao3",
+        "enunciado": "Qual país era liderado por Benito Mussolini durante a Segunda Guerra Mundial?",
+        "alternativas": {
+          "a": "Alemanha",
+          "b": "Japão",
+          "c": "Itália",
+          "d": "União Soviética"
+        },
+        "alternativaCorreta": "c"
+      },
+      {
+        "questao": "questao4",
+        "enunciado": "Qual foi a principal conferência aliada durante a Segunda Guerra Mundial que decidiu a estratégia da guerra e o futuro da Europa pós-guerra?",
+        "alternativas": {
+          "a": "Conferência de Yalta",
+          "b": "Conferência de Potsdam",
+          "c": "Conferência de Casablanca",
+          "d": "Conferência de Teerã"
+        },
+        "alternativaCorreta": "a"
+      },
+      {
+        "questao": "questao5",
+        "enunciado": "Qual era o nome do programa de perseguição e extermínio sistemático de judeus e outros grupos considerados indesejáveis pelo regime nazista?",
+        "alternativas": {
+          "a": "Lebensraum",
+          "b": "Blitzkrieg",
+          "c": "Holocausto",
+          "d": "Führerprinzip"
+        },
+        "alternativaCorreta": "c"
+      }
+    ]
+  }

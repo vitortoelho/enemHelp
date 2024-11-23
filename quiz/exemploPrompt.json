@@ -1,8 +1,18 @@
 {
-    "assunto": "Exemplo de assunto",
     "questoes": [
       {
         "questao": "questao1",
+        "enunciado": "Texto do enunciado",
+        "alternativas": {
+          "a": "Texto da alternativa a",
+          "b": "Texto da alternativa b",
+          "c": "Texto da alternativa c",
+          "d": "Texto da alternativa d"
+        },
+        "alternativaCorreta": "Letra da alternativa correta (a, b, c ou d)"
+      },
+      {
+        "questao": "questao2",
         "enunciado": "Texto do enunciado",
         "alternativas": {
           "a": "Texto da alternativa a",
