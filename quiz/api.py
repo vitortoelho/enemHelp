@@ -42,32 +42,31 @@ class GerarQuestaoAPIView(APIView):
             # Construir o prompt
             prompt = f"""Gere cinco questões sobre {assunto} em {materia}.
             Gere como exercícios de escola, dê 4 alternativas para cada questão (a, b, c e d) e indique apenas uma correta.
-            Formate a sua resposta desse jeito: {jsonDocs}"""
+            É MUITO IMPORTANTE que a resposta seja um JSON válido exatamente neste formato: {jsonDocs}"""
             
 
             # Gerar conteúdo usando a API
             model = genai.GenerativeModel("gemini-1.5-flash")
             response = model.generate_content(prompt)
 
-            texto_questoes = response.text.replace('**', '')
+            texto_questoes = response.text.replace('```json', '').replace('```', '').strip()
 
-            #print(texto_questoes)
-
-            # Obter o texto da resposta
-            texto_questoes = response.text.replace('\n', ' ').strip()
-
-            texto_questoes = ' '.join(texto_questoes.split())
-
-            #print(texto_questoes)
-
-            # Retornar o texto formatado para o cliente
-            return Response(
-                {"questoes": texto_questoes},
-                status=status.HTTP_200_OK
-            )
+            try:
+                # Tentar fazer o parse do JSON retornado
+                questoes_json = json.loads(texto_questoes)
+                
+                # Retornar o JSON parseado
+                return Response(
+                    questoes_json,
+                    status=status.HTTP_200_OK
+                )
+            except json.JSONDecodeError as je:
+                return Response(
+                    {"error": f"Erro ao decodificar JSON da resposta: {str(je)}"},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                )
 
         except Exception as e:
-            # Retornar erro genérico para outros casos
             return Response(
                 {"error": f"Erro ao gerar questões: {str(e)}"},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR

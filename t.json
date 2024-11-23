@@ -1,59 +1,59 @@
 {
-    "questoes": [
+  "questoes": [
       {
-        "questao": "questao1",
-        "enunciado": "Qual evento é amplamente considerado o início da Segunda Guerra Mundial?",
-        "alternativas": {
-          "a": "O ataque a Pearl Harbor pelo Japão.",
-          "b": "A invasão da Polônia pela Alemanha.",
-          "c": "A assinatura do Pacto de Não-Agressão entre a Alemanha e a União Soviética.",
-          "d": "O lançamento das bombas atômicas em Hiroshima e Nagasaki."
-        },
-        "alternativaCorreta": "b"
+          "questao": "questao1",
+          "enunciado": "Qual evento é considerado o marco inicial da Segunda Guerra Mundial?",
+          "alternativas": {
+              "a": "O ataque a Pearl Harbor.",
+              "b": "A invasão da Polônia pela Alemanha.",
+              "c": "A declaração de guerra da Inglaterra à Alemanha.",
+              "d": "A explosão da bomba atômica em Hiroshima."
+          },
+          "alternativaCorreta": "b"
       },
       {
-        "questao": "questao2",
-        "enunciado": "Qual era o nome do plano de invasão alemã à França, executado em 1940?",
-        "alternativas": {
-          "a": "Plano Barbarossa",
-          "b": "Operação Sea Lion",
-          "c": "Plano Fall Gelb",
-          "d": "Operação Overlord"
-        },
-        "alternativaCorreta": "c"
+          "questao": "questao2",
+          "enunciado": "Qual era o nome do tratado assinado após a Primeira Guerra Mundial, que buscava evitar novos conflitos, mas acabou sendo ineficaz na prevenção da Segunda Guerra Mundial?",
+          "alternativas": {
+              "a": "Tratado de Tordesilhas",
+              "b": "Tratado de Versalhes",
+              "c": "Pacto de Varsóvia",
+              "d": "Tratado de Não-Proliferação"
+          },
+          "alternativaCorreta": "b"
       },
       {
-        "questao": "questao3",
-        "enunciado": "Qual país era liderado por Benito Mussolini durante a Segunda Guerra Mundial?",
-        "alternativas": {
-          "a": "Alemanha",
-          "b": "Japão",
-          "c": "Itália",
-          "d": "União Soviética"
-        },
-        "alternativaCorreta": "c"
+          "questao": "questao3",
+          "enunciado": "Quais países formavam o Eixo durante a Segunda Guerra Mundial?",
+          "alternativas": {
+              "a": "Alemanha, França e Itália",
+              "b": "Alemanha, Itália e Japão",
+              "c": "Grã-Bretanha, França e Estados Unidos",
+              "d": "União Soviética, Estados Unidos e Grã-Bretanha"
+          },
+          "alternativaCorreta": "b"
       },
       {
-        "questao": "questao4",
-        "enunciado": "Qual foi a principal conferência aliada durante a Segunda Guerra Mundial que decidiu a estratégia da guerra e o futuro da Europa pós-guerra?",
-        "alternativas": {
-          "a": "Conferência de Yalta",
-          "b": "Conferência de Potsdam",
-          "c": "Conferência de Casablanca",
-          "d": "Conferência de Teerã"
-        },
-        "alternativaCorreta": "a"
+          "questao": "questao4",
+          "enunciado": "Qual o nome do plano de invasão alemã à União Soviética, lançado em 1941?",
+          "alternativas": {
+              "a": "Operação Barbarossa",
+              "b": "Operação Overlord",
+              "c": "Blitzkrieg",
+              "d": "Operação Sea Lion"
+          },
+          "alternativaCorreta": "a"
       },
       {
-        "questao": "questao5",
-        "enunciado": "Qual era o nome do programa de perseguição e extermínio sistemático de judeus e outros grupos considerados indesejáveis pelo regime nazista?",
-        "alternativas": {
-          "a": "Lebensraum",
-          "b": "Blitzkrieg",
-          "c": "Holocausto",
-          "d": "Führerprinzip"
-        },
-        "alternativaCorreta": "c"
+          "questao": "questao5",
+          "enunciado": "Em que cidade ocorreu o lançamento das bombas atômicas pelos Estados Unidos no final da Segunda Guerra Mundial?",
+          "alternativas": {
+              "a": "Berlim",
+              "b": "Tóquio",
+              "c": "Hiroshima e Nagasaki",
+              "d": "Londres"
+          },
+          "alternativaCorreta": "c"
       }
-    ]
-  }
+  ]
+}
