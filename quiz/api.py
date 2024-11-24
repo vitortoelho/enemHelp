@@ -30,7 +30,7 @@ class GerarQuestaoAPIView(APIView):
 
             # Configurar a API do Gemini
             genai.configure(api_key="AIzaSyDKilv1qBzn8ewXSziCaoWzUOM_aQWVVhU")
-
+            
             
             current_directory = os.getcwd()
             promptJson = os.path.join(current_directory, "quiz", "exemploPrompt.json")
