@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
-
 class GerarQuestaoAPIView(APIView):
     """
     API para gerar questões utilizando o modelo Gemini.
@@ -28,9 +27,17 @@ class GerarQuestaoAPIView(APIView):
                     status=status.HTTP_400_BAD_REQUEST
                 )
 
-            # Configurar a API do Gemini
-            genai.configure(api_key="AIzaSyD8krMF7Qfci0mnsBHjTSQ837wPic4SlPw")
+            # Obter a chave da API do Gemini do arquivo .env
+            api_key = os.getenv('GEMINI_API_KEY')
+
+            if not api_key:
+                return Response(
+                    {"error": "Chave da API não configurada corretamente."},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                )
             
+            # Configurar a API do Gemini
+            genai.configure(api_key=api_key)
             
             current_directory = os.getcwd()
             promptJson = os.path.join(current_directory, "quiz", "exemploPrompt.json")
