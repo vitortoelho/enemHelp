@@ -50,6 +50,10 @@ class Questoes(models.Model):
     
     def __str__(self):
         return self.nome
+    
+    class Meta:
+        verbose_name = 'Questão'
+        verbose_name_plural = 'Questões'
 
 class Alternativa(models.Model):
     texto = models.CharField(max_length=100)
