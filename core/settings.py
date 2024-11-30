@@ -28,9 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'enemHelp',
-    'users',
     'core',
+    'users',
+    'dadosQuiz',
     'quiz',
 ]
 
@@ -56,7 +56,7 @@ CORS_ALLOWED_ORIGINS = [
 "http://localhost:4200",
 ]
 
-ROOT_URLCONF = 'enemHelp.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'enemHelp.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database

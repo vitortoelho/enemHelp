@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0005_alter_alternativa_questoes'),
+        ('dadosQuiz', '0005_alter_alternativa_questoes'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 

@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0002_alter_area_options'),
+        ('dadosQuiz', '0002_alter_area_options'),
     ]
 
     operations = [
@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('texto', models.CharField(max_length=100)),
-                ('Questoes', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='alternativa', to='core.materia')),
+                ('Questoes', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='alternativa', to='dadosQuiz.materia')),
             ],
         ),
         migrations.CreateModel(
@@ -26,17 +26,17 @@ class Migration(migrations.Migration):
                 ('nome', models.CharField(max_length=100)),
                 ('enunciado', models.TextField()),
                 ('dificuldade', models.CharField(choices=[('mFacil', 'Muito fácil'), ('facil', 'Fácil'), ('medio', 'Médio'), ('dificil', 'Difícil'), ('mDificil', 'Muito difícil')], default='Medio', max_length=15)),
-                ('Assunto', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questões', to='core.assunto')),
-                ('area', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questões', to='core.area')),
-                ('materia', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questões', to='core.materia')),
+                ('Assunto', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questões', to='dadosQuiz.assunto')),
+                ('area', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questões', to='dadosQuiz.area')),
+                ('materia', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questões', to='dadosQuiz.materia')),
             ],
         ),
         migrations.CreateModel(
             name='Resultado',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('Questoes', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='resultado', to='core.materia')),
-                ('correta', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='resultado', to='core.alternativa')),
+                ('Questoes', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='resultado', to='dadosQuiz.materia')),
+                ('correta', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='resultado', to='dadosQuiz.alternativa')),
             ],
         ),
     ]

@@ -7,13 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0004_alternativa_correta'),
+        ('dadosQuiz', '0004_alternativa_correta'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='alternativa',
             name='Questoes',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='alternativa', to='core.questoes'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='alternativa', to='dadosQuiz.questoes'),
         ),
     ]

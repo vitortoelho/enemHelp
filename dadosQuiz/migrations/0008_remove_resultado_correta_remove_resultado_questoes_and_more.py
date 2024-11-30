@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0007_rename_questoes_alternativa_questoes_and_more'),
+        ('dadosQuiz', '0007_rename_questoes_alternativa_questoes_and_more'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -33,12 +33,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='resultado',
             name='alternativa',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='resultados', to='core.alternativa'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='resultados', to='dadosQuiz.alternativa'),
         ),
         migrations.AddField(
             model_name='resultado',
             name='questao',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='resultados', to='core.questoes'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='resultados', to='dadosQuiz.questoes'),
         ),
         migrations.AlterField(
             model_name='resultado',

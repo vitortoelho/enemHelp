@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from core.views import home
+from dadosQuiz.views import home
 from quiz.views import GerarQuestaoAPIView
 
 urlpatterns = [

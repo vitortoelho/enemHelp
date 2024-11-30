@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
-                ('area', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='materias', to='core.area')),
+                ('area', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='materias', to='dadosQuiz.area')),
             ],
         ),
         migrations.CreateModel(
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
-                ('materia', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='assuntos', to='core.materia')),
+                ('materia', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='assuntos', to='dadosQuiz.materia')),
             ],
         ),
     ]

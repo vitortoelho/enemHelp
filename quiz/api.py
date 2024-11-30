@@ -29,7 +29,7 @@ class GerarQuestaoAPIView(APIView):
                 )
 
             # Configurar a API do Gemini
-            genai.configure(api_key="AIzaSyDKilv1qBzn8ewXSziCaoWzUOM_aQWVVhU")
+            genai.configure(api_key="AIzaSyD8krMF7Qfci0mnsBHjTSQ837wPic4SlPw")
             
             
             current_directory = os.getcwd()

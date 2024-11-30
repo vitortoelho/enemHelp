@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0003_alternativa_questoes_resultado'),
+        ('dadosQuiz', '0003_alternativa_questoes_resultado'),
     ]
 
     operations = [
