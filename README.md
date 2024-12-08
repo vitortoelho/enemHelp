@@ -40,7 +40,7 @@ Get-ExecutionPolicy
 
 se mesmo após você verificar o nível de hierarquia, receber "RemoteSigned" e ainda assim você não conseguir executar o script para iniciar o ambiente virtual, tente reiniciar o computador, se ainda assim o erro persistir (ou receber um erro diferente) procure uma solução diferente.
 
-para que você possa utilizar a integração com a Gemini você deve obter uma chave para a API [aqui](https://aistudio.google.com/),após isso você deverá criar um arquivo chamado .env na raiz do projeto e dentro dele inserir a chave como no seguinte exemplo: 
+para que você possa utilizar a integração com a Gemini você deve obter uma chave para a API [aqui](https://aistudio.google.com/), após isso você deverá criar um arquivo chamado .env na raiz do projeto e dentro dele inserir a chave como no seguinte exemplo: 
 
 ```
 GEMINI_API_KEY=B2xWq4YTmK98LpRfZ6oCNvJh3A7PiD9EsQr5Ut
